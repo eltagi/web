@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+
+    <t t-name="web_stage_rail.StageRail" owl="1">
+        <div class="o_stage_rail d-flex" t-if="stages.length">
+            <t t-foreach="stages" t-as="stage" t-key="stage.key">
+                <div class="o_stage_rail_item" t-att-class="{
+                    'is-current': stage.isCurrent,
+                    'is-done': stage.isDone,
+                }">
+                    <span class="o_stage_rail_label" t-esc="stage.label"/>
+                </div>
+            </t>
+        </div>
+    </t>
+
+</templates>

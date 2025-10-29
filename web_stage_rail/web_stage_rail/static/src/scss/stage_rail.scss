@@ -1,0 +1,79 @@
+/* --- Main Container --- */
+.o_stage_rail {
+    position: relative;
+    padding: 24px 16px;
+    margin-right: 16px;
+    border-right: 1px solid #dee2e6;
+
+    /* The vertical connecting line */
+    &::before {
+        content: "";
+        position: absolute;
+        background-color: #dee2e6;
+        width: 2px;
+        top: 24px;
+        bottom: 24px;
+        left: 23px;
+
+        z-index: 1;
+    }
+}
+
+/* --- Stage Item --- */
+.o_stage_rail_item {
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+
+    &:not(:last-child) {
+        margin-bottom: 24px;
+    }
+
+    /* The circle marker */
+    &::before {
+        content: "";
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        background-color: #ffffff;
+        border: 2px solid #dee2e6;
+        margin-right: 16px;
+        flex-shrink: 0;
+    }
+}
+
+/* --- Stage Label --- */
+.o_stage_rail_label {
+    color: #6c757d;
+    font-weight: 500;
+}
+
+/* --- State Styling --- */
+.o_stage_rail_item {
+
+    &.is-done {
+        &::before {
+            background-color: #017e84;
+            border-color: #017e84;
+        }
+
+        .o_stage_rail_label {
+            color: #4c4c4c;
+        }
+    }
+
+    /* Style for the current stage */
+    &.is-current {
+        &::before {
+            border-color: #017e84;
+            background-color: #ffffff;
+            background-image: radial-gradient(#017e84 40%, transparent 40%);
+        }
+
+        .o_stage_rail_label {
+            color: #017e84;
+            font-weight: 700;
+        }
+    }
+}

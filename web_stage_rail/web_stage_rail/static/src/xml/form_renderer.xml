@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+
+    <t t-name="web_stage_rail.FormRenderer" owl="1">
+        <div class="o_form_view d-flex" t-att-class="props.class" t-ref="root">
+
+
+            <div class="o_form_sheet_bg flex-grow-1">
+                <div class="o_form_sheet position-relative">
+                </div>
+            </div>
+            <StageRail record="props.record" t-if="props.record.fields.state"/>
+
+        </div>
+    </t>
+
+</templates>
